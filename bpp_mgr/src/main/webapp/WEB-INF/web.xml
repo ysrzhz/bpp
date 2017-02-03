@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5" id="WebApp_1449039317316">
+	<display-name>bpp_mgr</display-name>
+	<!-- Spring Log4j配置文件的位置 -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.xml</param-value>
+	</context-param>
+	<!-- Spring应用是否可以通过System.getProperties(“webAppRootKey”)得到当前应用名 -->
+	<context-param>
+		<param-name>log4jExposeWebAppRoot</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<!-- Spring检测Log4j配置文件是否改变的时间间隔，单位为ms -->
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>10</param-value>
+	</context-param>
+	<!-- 加载系统log4j配置 -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<!-- Spring配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-applicationContext.xml,classpath:spring-dubboAddress.xml,classpath:spring-service.xml,classpath:spring-task.xml</param-value>
+	</context-param>
+	<!-- 加载Spring配置 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 数据初始化加载 -->
+	<listener>
+		<listener-class>com.wasu.bpp.listener.LoadDataListener</listener-class>
+	</listener>
+
+	<!-- session失效时 页面超时无法跳转的过滤器的添加 -->
+	<filter>
+		<filter-name>privilegeFilter</filter-name>
+		<filter-class>com.wasu.pub.filter.PrivilegeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>privilegeFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- Redis配置文件 -->
+	<context-param>
+		<param-name>cacheConfig</param-name>
+		<param-value>conf/redis-conf.xml</param-value>
+	</context-param>
+	<!-- 加载Redis配置 -->
+	<servlet>
+		<servlet-name>cacheServlet</servlet-name>
+		<servlet-class>com.wasu.pub.cache.config.CacheServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cacheServlet</servlet-name>
+		<url-pattern>/cache/index.jsp</url-pattern>
+	</servlet-mapping>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/WEB-INF/grant.tld</taglib-uri>
+			<taglib-location>/WEB-INF/grant.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

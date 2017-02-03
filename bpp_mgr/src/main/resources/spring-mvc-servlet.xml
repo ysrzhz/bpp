@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+	
+	<aop:aspectj-autoproxy/><!-- 日志生成必须配置项 -->
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <context:component-scan base-package="com.wasu.*.controller"/>
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+	<mvc:interceptors><bean class="com.wasu.pub.filter.SpringInterceptor"/></mvc:interceptors>
+  	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+  
+	<!-- 前缀+ viewName +后缀 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/> 
+	    <property name="prefix" value="/views/"></property><!-- webroot到某一指定的文件夹的路径 -->
+	    <property name="suffix" value=".jsp"></property><!-- 视图名称的后缀 -->
+	</bean>
+</beans>

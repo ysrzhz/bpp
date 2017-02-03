@@ -1,0 +1,242 @@
+body {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	background: #93bbe5 url(../images/load_bg.jpg) top center no-repeat;
+	color: #3a69ad;
+}
+
+.lo_tit {
+	margin: 8px auto;
+	margin-top: 104px;
+	width: 458px;
+	height: 19px;
+}
+
+.load {
+	margin: 0 auto;
+	width: 458px;
+	height: 301px;
+	background: url(../images/lo_line.jpg) repeat-x;
+}
+
+.load .side {
+	float: left;
+	width: 10px;
+	height: 301px;
+}
+
+.load .ct {
+	float: left;
+	width: 438px;
+	margin: 26px 0px;
+	overflow: hidden;
+}
+
+.load .ct .tit {
+	height: 29px;
+	margin: 0px 60px;
+	margin-bottom: 25px;
+}
+
+.lo_ct {
+	clear: both;
+	padding: 0;
+	margin:0 0 10px 0;
+	width: 338px;
+	margin: 0px 50px;
+}
+
+.lo_ct div {
+	background: url(../images/load_in1.jpg) no-repeat;
+	width: 140px;
+	padding-top:3px;
+	*padding-top:0px;
+	height: 23px;
+}
+
+.lo_ct input {
+	padding: 0;
+	margin: 0;
+	line-height: 23px;
+	height:25px;
+	overflow:hidden;
+	border: none;
+	padding-left: 5px;
+	color: #000000;
+	line-height:21px;
+	border: none;
+	background: none;
+	width: 135px;
+}
+
+.lo_ct span.img1 {
+	float: left;
+	width: 62px;
+}
+
+.lo_ct span.validate {
+	width: 75px;
+	height: 23px;
+	background: url(../images/load_in2.jpg) no-repeat;
+	float: left;
+	line-height:23px;
+	margin-right: 5px;
+}
+
+.lo_ct span.validate input {
+	border: none;
+	background: none;
+	width:75px;line-height:23px;
+	
+}
+
+.lo_ct .bt {
+	width: 81px;
+	height: 30px;
+	background: none;
+}
+
+.at {
+	height: 30px;
+	padding-left: 8px;
+	margin-top:40px;
+	*margin-top:20px;
+	color: #4C4C4C;
+	text-align: left;
+}
+
+#b_at {
+	position: absolute;
+	top: 470px;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+
+.bot input {
+	width: 81px;
+	height: 30px;
+	border: none;
+	background: url(../images/bu_load1.jpg) no-repeat;
+}
+
+.bot input:hover {
+	background: url(../images/bu_load2.jpg) no-repeat;
+}
+
+.red {
+	color: #FF0000
+}
+
+/* dialog start*/
+#dialogbg {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 20;
+	background: #666;
+	opacity: 0.3;
+	filter: alpha(opacity =   30);
+	-moz-opacity: 0.3;
+}
+
+#dialog {
+	width: 500px;
+	height: 300px;
+	border: 1px solid #86B4E5;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 21;
+	font-family: Arial, Helvetica, sans-serif "����";
+	background: #FFF;
+}
+
+#dialog #dialog_title,#dialog h2 {
+	font-size: 14px;
+	height: 22px;
+	line-height: normal;
+	padding: 9px 0 0 8px;
+	color: #0067B2;
+	cursor: move;
+	border-bottom: 1px solid #86B4E5;
+	position: relative;
+	background: #E9F2FB url(../images/bg_cntnav.jpg) center repeat-x;
+}
+
+#btn_closedialog {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	cursor: pointer;
+	background: url(../images/btn_close.png) no-repeat;
+}
+
+#cnt_list {
+	overflow: auto;
+	overflow-x: hidden;
+	margin: 5px 0 0 0;
+	padding: 0 0 0 5px;
+	position: relative;
+}
+
+#cnt_list table {
+	text-align: center;
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+#cnt_list td {
+	text-align: center;
+}
+
+#cnt_list td img {
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
+}
+
+#btn_list {
+	height: 20px;
+	padding: 8px 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	border-top: 1px dashed #CCC;
+}
+
+#btn_list input {
+	width: 61px;
+	height: 20px;
+	border: none;
+	background: url(../images/but_guild_1.gif) no-repeat;
+}
+
+#btn_list input:hover {
+	background: url(../images/but_guild_2.gif) no-repeat;
+}
+
+.page_line .bu button,.info button,#pcolumn_delete button,.page_line .bu input,.info input,#pcolumn_delete input
+	{
+	float: center;
+	padding: 0;
+	margin: 0;
+	border: none;
+	text-align: center;
+	margin-top: 5px;
+	width: 100px;
+	height: 20px;
+	background: url(../images/but_guild_1.gif) top center no-repeat;
+	color: #006ec1;
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: 100;
+	word-spacing: 0;
+}

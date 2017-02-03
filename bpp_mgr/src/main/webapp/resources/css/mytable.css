@@ -1,0 +1,20 @@
+.mytable {
+	font-size: 12px;
+}
+
+.mytable input[type="text"] {
+	width: 150px;
+}
+
+.mytable tr:nth-child(2n+1) {
+	background: #F7FAFF;
+}
+
+.mytable tr:nth-child(2n) {
+	background: #FFFFFF;
+}
+
+.mytable tr td:nth-child(2n+1) {
+	background: #e9f0f9;
+}
+td *{vertical-align:middle;}

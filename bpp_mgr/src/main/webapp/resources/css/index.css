@@ -1,0 +1,107 @@
+#css3menu li{ float:left; list-style-type:none;}
+#css3menu li a{	color:#fff; padding-right:20px;}
+#css3menu li a.active{color:yellow;}
+
+#moduleDiv .List1 {
+float: left;
+text-align: center;
+list-style-type: none;
+height: 30px;
+position: relative;
+left: 20px;
+top: 9px;
+/* border: 1px solid #C9C9C9; */
+}
+
+#moduleDiv .List1 li {
+width: 140px;
+float: left;
+height: 30px;
+line-height: 20px;
+/* border-radius: 16px; */
+position: relative;
+top: 0px;
+vertical-align: middle;
+}
+
+#moduleDiv  .Select {
+	background-image: url(../images/nav.png);
+	color: #FFFBFB !important;
+}
+#moduleDiv  .Select a {
+	color: #FFFBFB !important;
+}
+
+.panel-header{
+		margin: 0px 0px 0px 0px !important;
+		//border: 3px solid;
+		//border-color: #F9F6F6 #ccc #ccc #ccc;
+		//width: 159px;
+		
+		background-image: url(../images/but_guild_1.png);
+}
+
+#wnav .panel{
+		//background-color: #E0ECFF !important;
+		background: #EAF2FD;
+}
+
+.panel-body.layout-body{
+		//background-color: #E0ECFF ;
+		background: #EAF2FD;
+}
+.panel-body.panel-body-noheader.layout-body{
+		background-color: #FFFFFF ;
+
+}
+.panel-body.accordion-body{
+		margin-left: 0px !important;
+}
+#wnav{
+	margin-left: 0px;
+}
+.panel-header.accordion-header{
+	border: 1px solid #95B8E7;
+	//	border: 3px solid;
+		//border-color: #F9F6F6 #ccc #ccc #ccc;
+}
+
+.panel-title{
+//font-size: 17px;
+}
+
+
+.panel-title.panel-with-icon{
+	//font-size: 15px;
+}
+
+.panel-tool a{
+	margin: 0px 5px 0 0px;
+}
+
+.icon-sys{ 
+		background-position: -120px -60px !important;
+}
+
+
+.panel-body.accordion-body {
+//background-color: #E0ECFF;
+color: #000000;
+font-size: 12px;
+background: #EAF2FD;
+}
+
+
+.accordion .accordion-header {
+filter: none;
+background-image: url(../images/but_guild_1.png);
+}
+
+
+.head , .head a{
+	font-size: 12px;
+}
+.head a:hover {
+color: #006DC1;
+text-decoration: underline;
+}

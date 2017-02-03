@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <display-name>bpp_dcu</display-name>
+    <!-- Log4j配置文件的位置 -->
+    <context-param>
+        <param-name>log4j-dir</param-name>
+        <param-value>classpath:log4j.xml</param-value>
+    </context-param>
+    <!-- 检测Log4j配置文件是否改变的时间间隔，单位为ms -->
+    <context-param>
+        <param-name>log4j-interval</param-name>
+        <param-value>10</param-value>
+    </context-param>
+    <!-- 加载系统log4j配置 -->
+    <listener>
+        <listener-class>com.wasu.dc.listener.Log4jListener</listener-class>
+    </listener>
+    
+    <!-- Spring配置文件 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring-applicationContext.xml,classpath:spring-dubboAddress.xml,classpath:spring-service.xml</param-value>
+    </context-param>
+    <!-- 加载Spring配置 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!-- Redis配置文件 -->
+	<context-param>
+        <param-name>cacheConfig</param-name>
+        <param-value>conf/redis-conf.xml</param-value>
+    </context-param>
+    <!-- 加载Redis配置 -->
+    <servlet>
+        <servlet-name>cacheServlet</servlet-name>
+        <servlet-class>com.wasu.dc.cache.CacheServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cacheServlet</servlet-name>
+        <url-pattern>/cache/index.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

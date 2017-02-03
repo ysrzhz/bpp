@@ -1,0 +1,253 @@
+body {
+	font-size: 12px;
+	text-family: '宋体';
+}
+
+tabletable {
+	font-size: 12px;
+	text-family: '宋体';
+	border-collapse: collapse;
+}
+
+table.innertable {
+	font-size: 10px;
+	text-family: '宋体';
+	border-collapse: separate;
+	border-color: black;
+	border-style: solid;
+	border-spacing: px;
+	border-width: 1px;
+}
+
+tr {margin:10px;
+	
+}
+
+.alignright {
+	text-align: right;
+	font-weight: bold;
+}
+
+#sources {
+	font-size: 12px;
+	text-family: '宋体';
+}
+
+.radio {
+	width: 20px;
+}
+
+.checkbox {
+	width: 20px;
+}
+
+select {
+	width: 150px;
+}
+
+textarea {
+	width: 500px;
+	height: 60px;
+}
+
+.span_tip {
+	color: blue;
+}
+
+.span_require_tip {
+	color: red;
+}
+
+body {
+	margin: 8px !important;
+}
+
+body>div:first-child .datagrid-view {
+	max-height: 94%;
+}
+
+#tb>div {
+	border: 1px solid #DBDBDB;
+	padding: 5px;
+}
+
+#tb  tr>td>span {
+	margin-right: 20px;
+	font-size: 12px;
+	float: right;
+}
+
+.combo.datebox {
+	width: 130px;
+}
+
+.alignright {
+	white-space: nowrap;
+}
+
+.datagrid-wrap.panel-body  .datagrid-pager.pagination {
+	bottom: 0px;
+	width: 100%;
+	position: relative;
+	/*position: absolute;*/
+}
+
+#tb  div:eq(1)  input {
+	width: 130px !important;
+}
+
+div form table tr td, th {
+	border: 1px solid #96b7e0;
+	padding: 3px;
+	white-space: nowrap;
+}
+
+div form>table>tbody>tr:nth-child(2n+1) {
+	background: #F7FAFF;
+}
+
+div form>table>tbody>tr:nth-child(2n) {
+	background: #FFFFFF;
+}
+
+div form>table>tbody>tr>td:nth-child(2n+1) {
+	background: #e9f0f9;
+}
+
+div form>table {
+	margin: auto;
+	font-size: 12px;
+}
+
+#tb  div:eq(1)  span {
+	margin-right: 15px;
+}
+
+#dlg_create div.panel, div.dialog-content {
+	
+}
+
+#tb>div  input:nth-child(5) {
+	
+}
+
+.datagrid-body input[type="text"] {
+	
+}
+
+.panel-fit, .panel-fit body {
+	
+}
+
+.divborder {
+	border: 1px solid #DBDBDB;
+	margin: 0px 0px 5px 0px;
+}
+
+.formstyle {
+	margin-bottom:0px;
+}
+
+.calendar table {
+	table-layout: auto;
+}
+
+.uploadTd {
+	background-color: #E6F0F6;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	width: 150px;
+}
+.upload {
+	text-align: right;
+	font-size: 12px;
+	color: #1c5180;
+	width: 150px;
+}
+.picDiv {
+	width: 100px;
+	height: auto;
+	padding: 5px;
+	float: left;
+	margin: 2px auto;
+}
+
+.del {
+	float: left;
+	width: 100px;
+	height: auto;
+	text-align: center;
+	margin: 2px auto;
+}
+
+.img-channel {
+	width: 100px;
+	height: 125px;
+}
+
+.img-asset {
+	width: 100px;
+	height: 125px;
+}
+
+.text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.datagrid-body {
+	position: relative;
+	max-height: 623px;
+}
+
+.panel-fit, .panel-fit body {
+	height: 99% !important;
+}
+
+td * {
+	vertical-align: middle;
+}
+
+.vertical-separator {
+	height:25;
+	border-left:1px solid #ccc;
+	border-right:1px solid #fff;
+	display:inline;
+	margin: 0px 6px
+}
+
+.disableInput {
+	background-color: #ccc;
+}
+
+.pagination .pagination-num {
+width: 3.2em;
+}
+
+.file {
+	position: relative;
+	display: inline-block;
+	background: #D0EEFF;
+	border: 1px solid #99D3F5;
+	border-radius: 4px;
+	padding: 4px 12px;
+	overflow: hidden;
+	color: #1E88C7;
+	text-decoration: none;
+	text-indent: 0;
+	line-height: 20px;
+}
+.file input {
+	position: absolute;
+	font-size: 100px;
+	right: 0;
+	top: 0;
+	opacity: 0;
+}
+.file:hover {
+	background: #AADFFD;
+	border-color: #78C3F3;
+	color: #004974;
+	text-decoration: none;
+}

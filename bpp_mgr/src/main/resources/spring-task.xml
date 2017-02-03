@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<!-- 消息发送任务 -->
+    <bean id="sendMsgTask" class="com.wasu.bpp.task.SendMsgTask"></bean><!-- 消息发送定时任务类 -->
+	<bean id="sendMsgTaskJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sendMsgTask"/><!-- 指定要定时执行的方法所在类，将定时任务定义成bean -->
+		<property name="targetMethod" value="execute"/><!-- 指定定时执行的方法 -->
+		<property name="concurrent" value="false"/><!-- 是否并发执行：有状态的任务不能并发执行，无状态的任务可并发执行 -->
+	</bean>
+	<!-- 任务执行策略配置：按周期执行的任务-定义触发时间 -->
+	<bean id="sendMsgTaskJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="sendMsgTaskJob"/><!-- 待执行任务 -->
+		<property name="cronExpression" value="0 0/${triggerMinuteSendTask} * * * ?"/><!-- 每1分钟触发 -->
+	</bean>
+	
+	<!-- 消息查询列表任务 -->
+    <bean id="getMsgListTask" class="com.wasu.bpp.task.GetMsgListTask"></bean><!-- 消息查询列表定时任务类 -->
+	<bean id="getMsgListTaskJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="getMsgListTask"/><!-- 指定要定时执行的方法所在类，将定时任务定义成bean -->
+		<property name="targetMethod" value="execute"/><!-- 指定定时执行的方法 -->
+		<property name="concurrent" value="false"/><!-- 是否并发执行：有状态的任务不能并发执行，无状态的任务可并发执行 -->
+	</bean>
+	<!-- 任务执行策略配置：按周期执行的任务-定义触发时间 -->
+	<bean id="getMsgListTaskJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="getMsgListTaskJob"/><!-- 待执行任务 -->
+		<property name="cronExpression" value="0 0/${triggerMinuteGetMsgList} * * * ?"/><!-- 每1分钟触发 -->
+	</bean>
+	
+	<!-- 启动任务 -->
+	<bean lazy-init="false" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="sendMsgTaskJobTrigger"/><!-- 消息发送定时任务触发器 -->
+				<ref bean="getMsgListTaskJobTrigger"/><!-- 消息查询列表定时任务触发器 -->
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,104 @@
+		
+		.panel-body.panel-body-noheader.panel-body-noborder.dialog-content{
+			width: 98% !important;
+			overflow: visible !important;
+			/*height: 94% !important;*/
+			padding: 8px !important;
+		}
+		.panel-body.panel-body-noheader.panel-body-noborder.dialog-content form{
+			width: 100%;
+			max-height: 95%;
+		}
+		.panel-body.panel-body-noheader.panel-body-noborder.dialog-content form>table{
+			width: 100%;
+			font-size: 12px;
+		}
+		
+		.panel-body.panel-body-noheader.panel-body-noborder.dialog-content form>table>tbody>tr>td, th{
+			border: 1px solid #96b7e0;
+			padding: 3px;
+			white-space: nowrap;
+		}
+		
+
+
+		.panel-body.panel-body-noheader.panel-body-noborder.dialog-content form>table tr  input[type="text"] {
+			width:150px;
+		}
+		
+		.panel-body.panel-body-noheader.panel-body-noborder.dialog-content form>table tr  input[type="text"]{
+			width:150px;
+		}
+		.panel-body.panel-body-noheader.panel-body-noborder.dialog-content form>table font{
+			white-space: initial;	
+		}
+
+		div form>table>tbody>tr:nth-child(2n+1){				
+			background: #F7FAFF;
+		}
+		div form>table>tbody>tr:nth-child(2n){				
+			background: #FFFFFF;
+		}
+	
+		div form>table>tbody>tr>td:nth-child(2n+1){
+			background: #e9f0f9;
+		}
+		#btn_selectmove input[type="text"] {
+			width: 50px;
+			margin-bottom: 4px;
+			display: block;
+			margin-left: 27px;
+		}
+
+		.dialog-button{		
+			/*position: absolute;
+			bottom: 5px;
+			width: 98%;
+			*/
+			position: relative;
+			
+		}
+		
+		table.mytable tr td  font{
+			font-size: 12px;
+			color: rgb(128, 128, 128);
+		}
+
+		.alignright {
+			text-align: right;
+			font-weight: bold;
+		}
+		
+		
+		.dialog-button .l-btn {
+			margin-right: 10px;
+		}
+						
+		.l-btn-left {
+
+		}
+		
+		#dlg_form{
+			overflow-y: scroll;
+			width: 101%;
+		}
+		#addPannel{
+			width: 98% !important;
+			overflow: visible;	
+			border: 0px;
+		}				
+				
+	.panel {
+		overflow: visible;
+	}
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

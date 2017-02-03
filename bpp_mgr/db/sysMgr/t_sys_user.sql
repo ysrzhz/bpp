@@ -1,0 +1,25 @@
+﻿DROP TABLE IF EXISTS `t_sys_user`;
+CREATE TABLE `t_sys_user` (
+  `id` varchar(255) NOT NULL,
+  `loginName` varchar(255) DEFAULT NULL,
+  `manager` varchar(1) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `orgId` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
+  `department` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `fax` varchar(255) DEFAULT NULL,
+  `mobile` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `owner` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `area` varchar(255) DEFAULT NULL,
+  `areaName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `loginName` (`loginName`) USING BTREE,
+  KEY `orgId` (`orgId`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

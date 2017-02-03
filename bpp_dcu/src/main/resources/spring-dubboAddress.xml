@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	xsi:noNamespaceSchemaLocation="classpath:/dubbo.xsd">
+
+    <dubbo:registry  protocol="zookeeper"  address="${zookeeper.ip}:${zookeeper.port}"  dynamic="false" />
+    <!-- <dubbo:registry  protocol="zookeeper"  address="${zookeeper.cluster}"  dynamic="false"/> -->
+	<dubbo:protocol  name="dubbo" host="${dubbo.ip}"  port="${dubbo.port}"/>
+	<dubbo:application name="bpp_dcu" />
+	<dubbo:provider timeout="5000000" host="${dubbo.ip}"  />
+	<dubbo:consumer timeout="5000000" check="false"/>
+	<dubbo:service interface="com.wasu.pub.service.DBCenter" ref="dbCenter"  /> 
+    <dubbo:service interface="com.wasu.pub.service.Seq" ref="seq" /> 
+</beans>

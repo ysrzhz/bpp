@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GBK"?>
+<cache-config>
+	<!--缓存服务器配置-->
+	<servers>
+		<server type="redis">
+			<param name="ip">${redis.ip}</param>
+			<param name="port">${redis.port}</param>
+			<param name="maxTotal">500</param>
+			<param name="maxIdle">50</param>
+			<param name="maxWait">1000</param>
+		</server>
+		
+		<!-- <server type="redisCluster">
+			<param name="hostAndPorts">${redis.cluster}</param>
+			<param name="maxTotal">500</param>
+			<param name="maxIdle">50</param>
+			<param name="maxWait">1000</param>
+			<param name="timeout">5000</param>
+			<param name="maxRedirections">100</param>
+		</server> -->
+	</servers>
+	
+	<!--心跳检测间隔，单位秒-->
+	<heart-beat-interval>10</heart-beat-interval>
+	<!-- key 缓存保留时间，单位秒 -->
+	<cache-key-expire>14400</cache-key-expire>
+	<!--缓存日志级别:info,debug-->
+	<log-level>info</log-level>
+	<!--缓存是否可管理-->
+	<cache-manage>true</cache-manage>
+	<!--缓存是否可用-->
+	<cache-enable>true</cache-enable>
+</cache-config>
