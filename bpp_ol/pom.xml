@@ -13,7 +13,7 @@
 	<artifactId>bpp_ol</artifactId>
 	<packaging>war</packaging>
 	<name>bpp_ol</name>
-	<url>http://maven.apache.orgsss</url>
+	<url>http://maven.apache.orgsssppp</url>
 	<dependencies>
 		<dependency>
 			<groupId>com.wasu.bpp</groupId>
